@@ -31,7 +31,7 @@
     .contract {
       background: white;
       border-radius: 24px;
-      padding: 35px;
+      padding: 22px 28px;
       box-shadow: 0 12px 35px rgba(0,0,0,0.08);
     }
 
@@ -41,7 +41,7 @@
       align-items: center;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 18px;
       flex-wrap: wrap;
       gap: 15px;
     }
@@ -76,7 +76,7 @@
     }
 
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
 
     .section-title {
@@ -132,7 +132,7 @@
       border: 1px solid #fdba74;
       border-radius: 18px;
       padding: 20px;
-      line-height: 2;
+      line-height: 1.7;
       color: #7c2d12;
     }
 
@@ -148,12 +148,12 @@
       border-radius: 18px;
       padding: 25px;
       text-align: center;
-      min-height: 140px;
+      min-height: 90px;
       background: #fafafa;
     }
 
     .signature-box h3 {
-      margin-bottom: 60px;
+      margin-bottom: 35px;
       font-size: 18px;
     }
 
@@ -181,14 +181,54 @@
       opacity: 0.92;
     }
 
+    @page {
+      size: A4;
+      margin: 8mm;
+    }
+
+    .barcode-side {
+      position: absolute;
+      top: 140px;
+      left: -70px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 12px;
+      color: #6b7280;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .qr-box {
+      position: absolute;
+      top: 120px;
+      right: -10px;
+      width: 85px;
+      height: 85px;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #6b7280;
+      background: white;
+      text-align: center;
+      padding: 6px;
+    }
+
     @media print {
       body {
         background: white;
         padding: 0;
+        zoom: 92%;
       }
 
       .contract {
         box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 20px;
+        overflow: hidden;
         border-radius: 0;
       }
 
@@ -221,6 +261,14 @@
 
   <div class="container">
     <div class="contract">
+
+      <div class="barcode-side">
+        SHASSIHA VERIFIED CONTRACT
+      </div>
+
+      <div class="qr-box">
+        QR / BARCODE
+      </div>
 
       <div class="header">
         <div class="logo">SHASSIHA</div>
@@ -291,9 +339,11 @@
         <div class="section-title">معلومات السيارة</div>
 
         <div class="grid">
+          
+
           <div class="field">
             <label>نوع السيارة</label>
-            <input type="text" placeholder="BMW X5">
+            <input type="text" id="carName" placeholder="BMW X5">
           </div>
 
           <div class="field">
@@ -306,20 +356,14 @@
             <input type="text" placeholder="WBA43FJ03RCP87478">
           </div>
 
-          <div class="field">
-            <label>رقم المحرك</label>
-            <input type="text" placeholder="ادخل رقم المحرك">
-          </div>
+          
 
           <div class="field">
             <label>اللون</label>
             <input type="text" placeholder="ابيض">
           </div>
 
-          <div class="field">
-            <label>العداد</label>
-            <input type="text" placeholder="45,000 KM">
-          </div>
+          
         </div>
       </div>
 
@@ -419,6 +463,30 @@
 
       document.querySelector('.print-btn').prepend(refreshBtn);
     });
+  
+    const vehicleDatabase = {
+      'WBA43FJ03RCP87478': {
+        car: 'BMW X5',
+        year: '2024',
+        color: 'ابيض'
+      },
+      '1HGCM82633A123456': {
+        car: 'Honda Accord',
+        year: '2022',
+        color: 'اسود'
+      }
+    };
+
+    function fillVehicleData() {
+      const vin = document.getElementById('vinInput').value.trim();
+      const data = vehicleDatabase[vin];
+
+      if (data) {
+        document.getElementById('carName').value = data.car;
+        document.querySelector('input[placeholder="2024"]').value = data.year;
+        document.querySelector('input[placeholder="ابيض"]').value = data.color;
+      }
+    }
   </script>
 </body>
 </html>
