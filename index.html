@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,121 +20,156 @@ box-sizing:border-box;
 
 body{
 font-family:'Cairo',sans-serif;
-background:#f3f4f6;
+background:#ececec;
 padding:20px;
 }
 
 .page{
+
 width:210mm;
 min-height:297mm;
 background:#fff;
 margin:auto;
-padding:12mm;
+padding:10mm 12mm;
 border:1px solid #000;
+
 }
 
 .header{
+
 text-align:center;
-margin-bottom:10px;
+margin-bottom:12px;
+
 }
 
 .gov{
+
 font-size:15px;
 font-weight:700;
 line-height:1.8;
+
 }
 
 .title{
-font-size:34px;
+
+font-size:30px;
 font-weight:800;
-margin-top:10px;
-margin-bottom:8px;
+margin-top:8px;
+margin-bottom:6px;
+
 }
 
 .sub{
+
 font-size:13px;
 color:#555;
+
+}
+
+.section-title{
+
+font-size:20px;
+font-weight:800;
+margin-top:14px;
+margin-bottom:6px;
+
 }
 
 table{
+
 width:100%;
 border-collapse:collapse;
-margin-top:10px;
+margin-top:8px;
 font-size:14px;
+
 }
 
 td{
+
 border:1px solid #000;
-padding:7px;
+padding:6px;
 vertical-align:middle;
+
 }
 
 .label{
+
 font-weight:700;
 background:#fafafa;
 width:18%;
+
 }
 
 input{
+
 width:100%;
 border:none;
 outline:none;
 font-family:'Cairo',sans-serif;
 font-size:14px;
 background:transparent;
-}
 
-.section-title{
-margin-top:14px;
-margin-bottom:6px;
-font-size:18px;
-font-weight:800;
 }
 
 .terms{
+
 border:1px solid #000;
 padding:14px;
-margin-top:15px;
+margin-top:16px;
 line-height:2;
 font-size:14px;
+
 }
 
 .signatures{
+
 display:grid;
 grid-template-columns:1fr 1fr 1fr 1fr;
-margin-top:30px;
+margin-top:28px;
 border:1px solid #000;
 text-align:center;
+
 }
 
 .sign-box{
+
 border-left:1px solid #000;
+
 }
 
 .sign-box:last-child{
+
 border-left:none;
+
 }
 
 .sign-title{
+
 border-bottom:1px solid #000;
 padding:10px;
 font-weight:700;
 font-size:15px;
+
 }
 
 .sign-space{
-padding:55px 10px;
+
+padding:50px 10px;
+
 }
 
 .buttons{
+
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:25px;
+margin-top:24px;
+
 }
 
 button{
-background:#111827;
+
+background:#0f172a;
 color:#fff;
 border:none;
 padding:12px 24px;
@@ -141,32 +178,42 @@ font-family:'Cairo';
 font-size:15px;
 font-weight:700;
 cursor:pointer;
+
 }
 
 button:hover{
+
 opacity:.9;
+
 }
 
 @media print{
 
 body{
+
 background:#fff;
 padding:0;
+
 }
 
 .page{
+
 border:none;
 width:100%;
 padding:0;
+
 }
 
 .buttons{
+
 display:none;
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -176,17 +223,23 @@ display:none;
 <div class="header">
 
 <div class="gov">
+
 جمهورية العراق<br>
 مكتب القوة<br>
 لتنظيم عقود بيع وشراء السيارات
+
 </div>
 
 <div class="title">
+
 عقد اتفاق بيع مركبة
+
 </div>
 
 <div class="sub">
+
 رقم العقد : SH-2026-001
+
 </div>
 
 </div>
@@ -194,135 +247,192 @@ display:none;
 <table>
 
 <tr>
+
 <td class="label">اسم المالك الثلاثي</td>
+
 <td>
 <input type="text">
 </td>
 
 <td class="label">رقم المركبة</td>
-<td>
-<input type="text">
-</td>
-</tr>
 
-<tr>
-<td class="label">المحافظة</td>
 <td>
 <input type="text">
 </td>
 
-<td class="label">الرمز</td>
-<td>
-<input type="text">
-</td>
 </tr>
 
 </table>
 
 <div class="section-title">
+
 معلومات البائع
+
 </div>
 
 <table>
 
 <tr>
+
 <td class="label">اسم البائع</td>
+
 <td>
 <input type="text">
 </td>
 
 <td class="label">رقم الهاتف</td>
+
 <td>
 <input type="text">
 </td>
+
 </tr>
 
 <tr>
+
 <td class="label">رقم الهوية</td>
+
 <td>
 <input type="text">
 </td>
 
 <td class="label">العنوان</td>
+
 <td>
 <input type="text">
 </td>
+
 </tr>
 
 </table>
 
 <div class="section-title">
+
 معلومات المشتري
+
 </div>
 
 <table>
 
 <tr>
+
 <td class="label">اسم المشتري</td>
+
 <td>
 <input type="text">
 </td>
 
 <td class="label">رقم الهاتف</td>
+
 <td>
 <input type="text">
 </td>
+
 </tr>
 
 <tr>
+
 <td class="label">رقم الهوية</td>
+
 <td>
 <input type="text">
 </td>
 
 <td class="label">العنوان</td>
+
 <td>
 <input type="text">
 </td>
+
 </tr>
 
 </table>
 
 <div class="section-title">
+
 معلومات المركبة
+
 </div>
 
 <table>
 
 <tr>
+
 <td class="label">رقم الشاصي VIN</td>
+
 <td>
 <input type="text" id="vinInput" oninput="fillVehicleData()">
 </td>
 
 <td class="label">نوع المركبة</td>
+
 <td>
 <input type="text" id="carType">
 </td>
+
 </tr>
 
 <tr>
+
 <td class="label">الموديل</td>
+
 <td>
 <input type="text" id="carModel">
 </td>
 
 <td class="label">اللون</td>
+
 <td>
 <input type="text" id="carColor">
 </td>
+
 </tr>
 
 <tr>
-<td class="label">مبلغ البيع</td>
+
+<td class="label">رقم السنوية</td>
+
 <td>
 <input type="text">
 </td>
 
-<td class="label">طريقة الدفع</td>
+<td class="label">رقم المركبة</td>
+
 <td>
 <input type="text">
 </td>
+
+</tr>
+
+<tr>
+
+<td class="label">مبلغ البيع</td>
+
+<td>
+<input type="text">
+</td>
+
+<td class="label">الواصل</td>
+
+<td>
+<input type="text">
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">الباقي</td>
+
+<td>
+<input type="text">
+</td>
+
+<td class="label"></td>
+
+<td>
+</td>
+
 </tr>
 
 </table>
@@ -344,6 +454,7 @@ display:none;
 <div class="signatures">
 
 <div class="sign-box">
+
 <div class="sign-title">
 البائع
 </div>
@@ -351,9 +462,11 @@ display:none;
 <div class="sign-space">
 __________________
 </div>
+
 </div>
 
 <div class="sign-box">
+
 <div class="sign-title">
 الشاهد الثاني
 </div>
@@ -361,9 +474,11 @@ __________________
 <div class="sign-space">
 __________________
 </div>
+
 </div>
 
 <div class="sign-box">
+
 <div class="sign-title">
 الشاهد الأول
 </div>
@@ -371,9 +486,11 @@ __________________
 <div class="sign-space">
 __________________
 </div>
+
 </div>
 
 <div class="sign-box">
+
 <div class="sign-title">
 المشتري
 </div>
@@ -381,6 +498,7 @@ __________________
 <div class="sign-space">
 __________________
 </div>
+
 </div>
 
 </div>
@@ -388,11 +506,15 @@ __________________
 <div class="buttons">
 
 <button onclick="window.print()">
+
 تحميل / طباعة العقد
+
 </button>
 
 <button onclick="location.reload()">
+
 تحديث العقد
+
 </button>
 
 </div>
@@ -404,15 +526,19 @@ __________________
 const vehicleDatabase = {
 
 "WBA43FJ03RCP87478":{
+
 type:"BMW X5",
 model:"2024",
 color:"ابيض"
+
 },
 
 "1HGCM82633A123456":{
+
 type:"Honda Accord",
 model:"2022",
 color:"اسود"
+
 }
 
 };
