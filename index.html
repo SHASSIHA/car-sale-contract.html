@@ -1,507 +1,445 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عقد بيع سيارة - SHASSIHA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>عقد بيع مركبة</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #f3f4f6;
-      padding: 25px;
-      color: #111827;
-    }
+<style>
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .contract {
-      background: white;
-      border-radius: 24px;
-      padding: 22px 28px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    }
+body{
+font-family:'Cairo',sans-serif;
+background:#f3f4f6;
+padding:20px;
+}
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 20px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+.page{
+width:210mm;
+min-height:297mm;
+background:#fff;
+margin:auto;
+padding:12mm;
+border:1px solid #000;
+}
 
-    .logo {
-      font-size: 32px;
-      font-weight: 800;
-      color: #f97316;
-    }
+.header{
+text-align:center;
+margin-bottom:10px;
+}
 
-    .title {
-      text-align: center;
-      flex: 1;
-    }
+.gov{
+font-size:15px;
+font-weight:700;
+line-height:1.8;
+}
 
-    .title h1 {
-      font-size: 30px;
-      margin-bottom: 5px;
-    }
+.title{
+font-size:34px;
+font-weight:800;
+margin-top:10px;
+margin-bottom:8px;
+}
 
-    .title p {
-      color: #6b7280;
-      font-size: 14px;
-    }
+.sub{
+font-size:13px;
+color:#555;
+}
 
-    .contract-number {
-      background: #f9fafb;
-      padding: 12px 18px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      font-weight: 700;
-    }
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+font-size:14px;
+}
 
-    .section {
-      margin-bottom: 18px;
-    }
+td{
+border:1px solid #000;
+padding:7px;
+vertical-align:middle;
+}
 
-    .section-title {
-      font-size: 20px;
-      margin-bottom: 18px;
-      font-weight: 800;
-      color: #111827;
-      border-right: 5px solid #f97316;
-      padding-right: 10px;
-    }
+.label{
+font-weight:700;
+background:#fafafa;
+width:18%;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
+input{
+width:100%;
+border:none;
+outline:none;
+font-family:'Cairo',sans-serif;
+font-size:14px;
+background:transparent;
+}
 
-    .field {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 14px;
-    }
+.section-title{
+margin-top:14px;
+margin-bottom:6px;
+font-size:18px;
+font-weight:800;
+}
 
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 13px;
-      color: #6b7280;
-      font-weight: 600;
-    }
+.terms{
+border:1px solid #000;
+padding:14px;
+margin-top:15px;
+line-height:2;
+font-size:14px;
+}
 
-    .field input,
-    .field textarea,
-    .field select {
-      width: 100%;
-      border: none;
-      background: transparent;
-      outline: none;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 700;
-      color: #111827;
-    }
+.signatures{
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+margin-top:30px;
+border:1px solid #000;
+text-align:center;
+}
 
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
+.sign-box{
+border-left:1px solid #000;
+}
 
-    .terms {
-      background: #fff7ed;
-      border: 1px solid #fdba74;
-      border-radius: 18px;
-      padding: 20px;
-      line-height: 1.7;
-      color: #7c2d12;
-    }
+.sign-box:last-child{
+border-left:none;
+}
 
-    .signatures {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
+.sign-title{
+border-bottom:1px solid #000;
+padding:10px;
+font-weight:700;
+font-size:15px;
+}
 
-    .signature-box {
-      border: 2px dashed #d1d5db;
-      border-radius: 18px;
-      padding: 25px;
-      text-align: center;
-      min-height: 90px;
-      background: #fafafa;
-    }
+.sign-space{
+padding:55px 10px;
+}
 
-    .signature-box h3 {
-      margin-bottom: 35px;
-      font-size: 18px;
-    }
+.buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:25px;
+}
 
-    .print-btn {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-    }
+button{
+background:#111827;
+color:#fff;
+border:none;
+padding:12px 24px;
+border-radius:8px;
+font-family:'Cairo';
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+}
 
-    button {
-      background: #f97316;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 16px;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+button:hover{
+opacity:.9;
+}
 
-    button:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
+@media print{
 
-    @page {
-      size: A4;
-      margin: 8mm;
-    }
+body{
+background:#fff;
+padding:0;
+}
 
-    .barcode-side {
-      position: absolute;
-      top: 140px;
-      left: -70px;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 12px;
-      color: #6b7280;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
+.page{
+border:none;
+width:100%;
+padding:0;
+}
 
-    .qr-box {
-      position: absolute;
-      top: 120px;
-      right: -10px;
-      width: 85px;
-      height: 85px;
-      border: 2px dashed #d1d5db;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #6b7280;
-      background: white;
-      text-align: center;
-      padding: 6px;
-    }
+.buttons{
+display:none;
+}
 
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-        zoom: 92%;
-      }
+}
 
-      .contract {
-        box-shadow: none;
-        width: 100%;
-        max-width: 100%;
-        padding: 16px 20px;
-        overflow: hidden;
-        border-radius: 0;
-      }
-
-      .print-btn {
-        display: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      .contract {
-        padding: 18px;
-      }
-
-      .header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .title h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="contract">
+<div class="page">
 
-      <div class="barcode-side">
-        SHASSIHA VERIFIED CONTRACT
-      </div>
+<div class="header">
 
-      <div class="qr-box">
-        QR / BARCODE
-      </div>
+<div class="gov">
+جمهورية العراق<br>
+مكتب القوة<br>
+لتنظيم عقود بيع وشراء السيارات
+</div>
 
-      <div class="header" style="display:block;text-align:center;border:none;margin-bottom:10px;">
-        <div style="font-size:14px;font-weight:700;line-height:1.8;">
-          عقد عادي<br>
-          شاصيها<br>
-          لتنظيم عقود بيع وشراء السيارات
-        </div>
+<div class="title">
+عقد اتفاق بيع مركبة
+</div>
 
-        <div style="margin-top:10px;font-size:30px;font-weight:800;">
-          عقد اتفاق بين طرفين
-        </div>
+<div class="sub">
+رقم العقد : SH-2026-001
+</div>
 
-        <div style="margin-top:8px;color:#6b7280;font-size:13px;">
-          رقم العقد: 
-        </div>
-      </div>
+</div>
 
-      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px;">
-        <tr>
-          <td style="border:1px solid #000;padding:8px;font-weight:700;">اسم المالك الثلاثي</td>
-          <td style="border:1px solid #000;padding:8px;">
-            <input type="text" style="width:100%;border:none;outline:none;background:transparent;font-family:Cairo;">
-          </td>
-          <td style="border:1px solid #000;padding:8px;font-weight:700;">رقم المركبة</td>
-          <td style="border:1px solid #000;padding:8px;">
-            <input type="text" style="width:100%;border:none;outline:none;background:transparent;font-family:Cairo;">
-          </td>
-        </tr>
-      </table>
+<table>
 
-      <div class="section-title">معلومات البائع</div>
+<tr>
+<td class="label">اسم المالك الثلاثي</td>
+<td>
+<input type="text">
+</td>
 
-        <div class="grid">
-          <div class="field">
-            <label>اسم البائع</label>
-            <input type="text" placeholder="ادخل اسم البائع">
-          </div>
+<td class="label">رقم المركبة</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-          <div class="field">
-            <label>رقم الهاتف</label>
-            <input type="text" placeholder="07XXXXXXXXX">
-          </div>
+<tr>
+<td class="label">المحافظة</td>
+<td>
+<input type="text">
+</td>
 
-          <div class="field">
-            <label>رقم الهوية</label>
-            <input type="text" placeholder="رقم الهوية الموحد">
-          </div>
+<td class="label">الرمز</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-          <div class="field">
-            <label>العنوان</label>
-            <input type="text" placeholder="بغداد - المنصور">
-          </div>
-        </div>
-      </div>
+</table>
 
-      <div class="section">
-        <div class="section-title">معلومات المشتري</div>
+<div class="section-title">
+معلومات البائع
+</div>
 
-        <div class="grid">
-          <div class="field">
-            <label>اسم المشتري</label>
-            <input type="text" placeholder="ادخل اسم المشتري">
-          </div>
+<table>
 
-          <div class="field">
-            <label>رقم الهاتف</label>
-            <input type="text" placeholder="07XXXXXXXXX">
-          </div>
+<tr>
+<td class="label">اسم البائع</td>
+<td>
+<input type="text">
+</td>
 
-          <div class="field">
-            <label>رقم الهوية</label>
-            <input type="text" placeholder="رقم الهوية الموحد">
-          </div>
+<td class="label">رقم الهاتف</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-          <div class="field">
-            <label>العنوان</label>
-            <input type="text" placeholder="بغداد - الكرادة">
-          </div>
-        </div>
-      </div>
+<tr>
+<td class="label">رقم الهوية</td>
+<td>
+<input type="text">
+</td>
 
-      <div class="section">
-        <div class="section-title">معلومات السيارة</div>
+<td class="label">العنوان</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-        <div class="grid">
-          
+</table>
 
-          <div class="field">
-            <label>نوع السيارة</label>
-            <input type="text" id="carName" placeholder="BMW X5">
-          </div>
+<div class="section-title">
+معلومات المشتري
+</div>
 
-          <div class="field">
-            <label>سنة الصنع</label>
-            <input type="text" placeholder="2024">
-          </div>
+<table>
 
-          <div class="field">
-            <label>رقم الشاصي VIN</label>
-            <input type="text" placeholder="WBA43FJ03RCP87478">
-          </div>
+<tr>
+<td class="label">اسم المشتري</td>
+<td>
+<input type="text">
+</td>
 
-          
+<td class="label">رقم الهاتف</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-          <div class="field">
-            <label>اللون</label>
-            <input type="text" placeholder="ابيض">
-          </div>
+<tr>
+<td class="label">رقم الهوية</td>
+<td>
+<input type="text">
+</td>
 
-          
-        </div>
-      </div>
+<td class="label">العنوان</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-      <div class="section">
-        <div class="section-title">معلومات البيع</div>
+</table>
 
-        <div class="grid">
-          <div class="field">
-            <label>سعر البيع</label>
-            <input type="text" placeholder="$ 25,000">
-          </div>
+<div class="section-title">
+معلومات المركبة
+</div>
 
-          <div class="field">
-            <label>طريقة الدفع</label>
-            <select>
-              <option>نقداً</option>
-              <option>تحويل مصرفي</option>
-              <option>دفعات</option>
-            </select>
-          </div>
+<table>
 
-          <div class="field">
-            <label>تاريخ البيع</label>
-            <input type="date">
-          </div>
+<tr>
+<td class="label">رقم الشاصي VIN</td>
+<td>
+<input type="text" id="vinInput" oninput="fillVehicleData()">
+</td>
 
-          <div class="field">
-            <label>مكان التوقيع</label>
-            <input type="text" placeholder="بغداد">
-          </div>
-        </div>
-      </div>
+<td class="label">نوع المركبة</td>
+<td>
+<input type="text" id="carType">
+</td>
+</tr>
 
-      <div class="section">
-        <div class="section-title">شروط العقد</div>
+<tr>
+<td class="label">الموديل</td>
+<td>
+<input type="text" id="carModel">
+</td>
 
-        <div class="terms">
-          يقر البائع بأن السيارة المذكورة أعلاه مملوكة له قانونياً وخالية من أي مشاكل قانونية أو حجوزات.
-          كما يقر المشتري بمعاينة السيارة معاينة كاملة وقبوله بحالتها الحالية وقت الشراء.
-          يتم نقل الملكية وفق القوانين والتعليمات المعمول بها داخل جمهورية العراق.
-        </div>
-      </div>
+<td class="label">اللون</td>
+<td>
+<input type="text" id="carColor">
+</td>
+</tr>
 
-      <div class="section">
-        <div class="section-title">ملاحظات إضافية</div>
+<tr>
+<td class="label">مبلغ البيع</td>
+<td>
+<input type="text">
+</td>
 
-        <div class="field">
-          <textarea placeholder="اكتب أي ملاحظات إضافية هنا..."></textarea>
-        </div>
-      </div>
+<td class="label">طريقة الدفع</td>
+<td>
+<input type="text">
+</td>
+</tr>
 
-      <div class="signatures">
-        <div class="signature-box">
-          <h3>توقيع البائع</h3>
-          ____________________
-        </div>
+</table>
 
-        <div class="signature-box">
-          <h3>توقيع المشتري</h3>
-          ____________________
-        </div>
+<div class="terms">
 
-        <div class="signature-box">
-          <h3>الختم / الشاهد</h3>
-          ____________________
-        </div>
-      </div>
+1- يقر البائع بأن المركبة أعلاه مملوكة له قانونياً وخالية من أي مشاكل قانونية أو حجوزات.<br>
 
-      <div class="print-btn">
-        <button onclick="window.print()">طباعة العقد</button>
-      </div>
+2- يقر المشتري بأنه قام بمعاينة المركبة وقبل شراءها بحالتها الحالية.<br>
 
-    </div>
-  </div>
+3- تنتقل مسؤولية المركبة إلى المشتري بعد توقيع العقد.<br>
 
-  <script>
-    function downloadContract() {
-      window.print();
-    }
+4- يلتزم الطرفان بإكمال إجراءات نقل الملكية حسب القوانين العراقية النافذة.<br>
 
-    function refreshContract() {
-      location.reload();
-    }
+5- يعتبر هذا العقد ملزماً للطرفين بعد التوقيع عليه.
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const printButton = document.querySelector('.print-btn button');
+</div>
 
-      if (printButton) {
-        printButton.innerText = 'تحميل / طباعة العقد';
-        printButton.setAttribute('onclick', 'downloadContract()');
-      }
+<div class="signatures">
 
-      const refreshBtn = document.createElement('button');
-      refreshBtn.innerText = 'تحديث العقد';
-      refreshBtn.style.marginRight = '12px';
-      refreshBtn.onclick = refreshContract;
+<div class="sign-box">
+<div class="sign-title">
+البائع
+</div>
 
-      document.querySelector('.print-btn').prepend(refreshBtn);
-    });
-  
-    const vehicleDatabase = {
-      'WBA43FJ03RCP87478': {
-        car: 'BMW X5',
-        year: '2024',
-        color: 'ابيض'
-      },
-      '1HGCM82633A123456': {
-        car: 'Honda Accord',
-        year: '2022',
-        color: 'اسود'
-      }
-    };
+<div class="sign-space">
+__________________
+</div>
+</div>
 
-    function fillVehicleData() {
-      const vin = document.getElementById('vinInput').value.trim();
-      const data = vehicleDatabase[vin];
+<div class="sign-box">
+<div class="sign-title">
+الشاهد الثاني
+</div>
 
-      if (data) {
-        document.getElementById('carName').value = data.car;
-        document.querySelector('input[placeholder="2024"]').value = data.year;
-        document.querySelector('input[placeholder="ابيض"]').value = data.color;
-      }
-    }
-  </script>
+<div class="sign-space">
+__________________
+</div>
+</div>
+
+<div class="sign-box">
+<div class="sign-title">
+الشاهد الأول
+</div>
+
+<div class="sign-space">
+__________________
+</div>
+</div>
+
+<div class="sign-box">
+<div class="sign-title">
+المشتري
+</div>
+
+<div class="sign-space">
+__________________
+</div>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="window.print()">
+تحميل / طباعة العقد
+</button>
+
+<button onclick="location.reload()">
+تحديث العقد
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const vehicleDatabase = {
+
+"WBA43FJ03RCP87478":{
+type:"BMW X5",
+model:"2024",
+color:"ابيض"
+},
+
+"1HGCM82633A123456":{
+type:"Honda Accord",
+model:"2022",
+color:"اسود"
+}
+
+};
+
+function fillVehicleData(){
+
+const vin =
+document.getElementById("vinInput").value.trim();
+
+const data = vehicleDatabase[vin];
+
+if(data){
+
+document.getElementById("carType").value =
+data.type;
+
+document.getElementById("carModel").value =
+data.model;
+
+document.getElementById("carColor").value =
+data.color;
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
