@@ -223,11 +223,35 @@ margin:0;
 display:none;
 
 }
+.header{
+    position:relative;
+    text-align:center;
+    margin-bottom:8px;
+}
 
+.qr-box{
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+}
+
+#qrcode{
+    width:80px;
+    height:80px;
+    margin:auto;
+}
+
+.qr-text{
+    font-size:10px;
+    margin-top:4px;
+    font-weight:bold;
+    line-height:1.4;
+}
 }
 
 </style>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
@@ -235,6 +259,13 @@ display:none;
 <div class="page">
 
 <div class="header">
+<div class="qr-box">
+    <div id="qrcode"></div>
+    <div class="qr-text">
+        للتحقق من صحة العقد<br>
+        مرر الكاميرا إلى هنا
+    </div>
+</div>
 
 <div class="gov">
 </div>
@@ -614,6 +645,13 @@ document.getElementById("contractInfo").innerHTML =
 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 تاريخ العقد : ${contractDate}`;
 
+document.getElementById("qrcode").innerHTML = "";
+
+new QRCode(document.getElementById("qrcode"), {
+    text: "SH-" + contractNumber,
+    width: 80,
+    height: 80
+});
 }
 
 generateContractInfo();
