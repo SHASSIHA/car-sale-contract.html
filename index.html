@@ -191,7 +191,31 @@ button:hover{
 opacity:.9;
 
 }
+.header{
+    position:relative;
+    text-align:center;
+    margin-bottom:8px;
+}
 
+.qr-box{
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+}
+
+#qrcode{
+    width:80px;
+    height:80px;
+    margin:auto;
+}
+
+.qr-text{
+    font-size:10px;
+    margin-top:4px;
+    font-weight:bold;
+    line-height:1.4;
+}
 @page{
 
 size:A4;
@@ -223,38 +247,11 @@ margin:0;
 display:none;
 
 }
-.header{
-    position:relative;
-    text-align:center;
-    margin-bottom:8px;
-}
 
-.qr-box{
-    position:absolute;
-    top:0;
-    right:0;
-    text-align:center;
-}
-
-#qrcode{
-    width:80px;
-    height:80px;
-    margin:auto;
-}
-
-.qr-text{
-    font-size:10px;
-    margin-top:4px;
-    font-weight:bold;
-    line-height:1.4;
-}
 }
 
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
-
-<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><body>
 
 <div class="page">
 
@@ -307,8 +304,7 @@ display:none;
 
 <div class="section-title">
 
-معلومات البائع
-
+الطرف الاول ( البائع )
 </div>
 
 <table>
@@ -349,8 +345,7 @@ display:none;
 
 <div class="section-title">
 
-معلومات المشتري
-
+الطرف الثاني ( المشتري )
 </div>
 
 <table>
@@ -405,7 +400,7 @@ display:none;
 <input type="text" id="vinInput" oninput="fillVehicleData()">
 </td>
 
-<td class="label">نوع المركبة</td>
+<td class="label">اسم ونوع المركبة</td>
 
 <td>
 <input type="text" id="carType">
@@ -431,13 +426,13 @@ display:none;
 
 <tr>
 
-<td class="label">رقم السنوية</td>
+<td class="label">مبلغ البيع</td>
 
 <td>
 <input type="text">
 </td>
 
-<td class="label">رقم المركبة</td>
+<td class="label">رقم السنوية</td>
 
 <td>
 <input type="text">
@@ -447,13 +442,13 @@ display:none;
 
 <tr>
 
-<td class="label">مبلغ البيع</td>
+<td class="label">المبلغ الواصل </td>
 
 <td>
 <input type="text">
 </td>
 
-<td class="label">الواصل</td>
+<td class="label">كتابة</td>
 
 <td>
 <input type="text">
@@ -469,7 +464,7 @@ display:none;
 <input type="text">
 </td>
 
-<td class="label"></td>
+<td class="label">كتابة</td>
 
 <td>
 </td>
@@ -506,7 +501,7 @@ display:none;
 <div class="sign-box">
 
 <div class="sign-title">
-البائع
+الطرف الاول ( البائع )
 </div>
 
 <div class="sign-space">
@@ -542,7 +537,7 @@ ____________
 <div class="sign-box">
 
 <div class="sign-title">
-المشتري
+الطرف الثاني ( المشتري )
 </div>
 
 <div class="sign-space">
@@ -647,13 +642,19 @@ document.getElementById("contractInfo").innerHTML =
 
 document.getElementById("qrcode").innerHTML = "";
 
+const contractId = "SH-" + contractNumber;
+
+const verifyLink =
+`verify.html?id=${encodeURIComponent(contractId)}&date=${encodeURIComponent(contractDate)}`;
+
+document.getElementById("qrcode").innerHTML = "";
+
 new QRCode(document.getElementById("qrcode"), {
-    text: "SH-" + contractNumber,
+    text: verifyLink,
     width: 80,
     height: 80
 });
 }
-
 generateContractInfo();
 
 </script>
