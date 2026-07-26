@@ -314,8 +314,7 @@ display:none;
 <td class="label">اسم البائع</td>
 
 <td>
-<input type="text">
-</td>
+<input type="text" id="sellerName"></td>
 
 <td class="label">رقم الهاتف</td>
 
@@ -355,7 +354,7 @@ display:none;
 <td class="label">اسم المشتري</td>
 
 <td>
-<input type="text">
+<input type="text" id="buyerName">
 </td>
 
 <td class="label">رقم الهاتف</td>
@@ -505,9 +504,9 @@ display:none;
 </div>
 
 <div class="sign-space">
-__________________
+<span id="sellerSign"></span>
+<br>
 </div>
-
 </div>
 
 <div class="sign-box">
@@ -541,7 +540,8 @@ ____________
 </div>
 
 <div class="sign-space">
-__________________
+<span id="buyerSign"></span>
+<br>
 </div>
 
 </div>
@@ -652,6 +652,15 @@ new QRCode(document.getElementById("qrcode"), {
     text: verifyLink,
     width: 80,
     height: 80
+});
+
+document.getElementById("sellerName").addEventListener("input", function(){
+    document.getElementById("sellerSign").innerText = this.value;
+});
+
+
+document.getElementById("buyerName").addEventListener("input", function(){
+    document.getElementById("buyerSign").innerText = this.value;
 });
 }
 generateContractInfo();
