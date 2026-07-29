@@ -6,388 +6,273 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>شاصيها | عقد اتفاق بيع مركبة</title>
+<title>شاصيها | عقد عادي</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<!-- QR CODE LIBRARY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-
 
 body{
 
-    font-family:'Cairo',sans-serif;
-    background:#e9e9e9;
-    padding:15px;
+font-family:'Cairo',sans-serif;
+background:#ececec;
+padding:12px;
 
 }
-
 
 .page{
 
-    width:210mm;
-    min-height:297mm;
-    background:white;
-    margin:auto;
-    padding:8mm 10mm;
-    border:1px solid #000;
+width:210mm;
+min-height:297mm;
+background:#fff;
+margin:auto;
+padding:7mm 9mm;
+border:1px solid #000;
 
 }
-
-
-/* ===== HEADER ===== */
 
 .header{
 
-    position:relative;
-    text-align:center;
-    margin-bottom:10px;
+text-align:center;
+margin-bottom:8px;
 
 }
-
 
 .title{
 
-    font-size:25px;
-    font-weight:800;
-    line-height:1.5;
+font-size:24px;
+font-weight:800;
+margin-top:4px;
+margin-bottom:4px;
 
 }
-
 
 .sub{
 
-    margin-top:5px;
-    font-size:12px;
-    font-weight:700;
+font-size:12px;
+color:#555;
+margin-top:3px;
 
 }
-
-
-/* QR */
-
-.qr-box{
-
-    position:absolute;
-    right:0;
-    top:0;
-    width:90px;
-    text-align:center;
-
-}
-
-
-#qrcode{
-
-    width:80px;
-    height:80px;
-    margin:auto;
-
-}
-
-
-.qr-text{
-
-    font-size:9px;
-    margin-top:5px;
-    line-height:1.5;
-    font-weight:bold;
-
-}
-
-
-
-/* ===== SECTIONS ===== */
-
 
 .section-title{
 
-    margin-top:10px;
-    margin-bottom:5px;
-    font-size:17px;
-    font-weight:800;
+font-size:17px;
+font-weight:800;
+margin-top:8px;
+margin-bottom:4px;
 
 }
-
-
 
 table{
 
-    width:100%;
-    border-collapse:collapse;
-    font-size:12px;
+width:100%;
+border-collapse:collapse;
+margin-top:4px;
+font-size:12px;
 
 }
-
 
 td{
 
-    border:1px solid #000;
-    padding:5px;
-    height:28px;
+border:1px solid #000;
+padding:4px;
+vertical-align:middle;
 
 }
-
 
 .label{
 
-    background:#fafafa;
-    font-weight:700;
-    width:18%;
+font-weight:700;
+background:#fafafa;
+width:18%;
 
 }
-
-
 
 input{
 
-    width:100%;
-    border:none;
-    outline:none;
-    background:transparent;
-    font-family:'Cairo';
-    font-size:12px;
+width:100%;
+border:none;
+outline:none;
+font-family:'Cairo',sans-serif;
+font-size:12px;
+background:transparent;
 
 }
-
-
-
-/* مبلغ */
-
-.amount-cell{
-
-    display:flex;
-    align-items:center;
-    gap:5px;
-
-}
-
-
-.currency-select{
-
-    border:none;
-    background:transparent;
-    font-family:'Cairo';
-    font-size:11px;
-
-}
-
-
-
-
-/* ===== TERMS ===== */
-
 
 .terms{
 
-    margin-top:10px;
-    border:1px solid #000;
-    padding:8px;
-    font-size:12px;
-    line-height:1.8;
+border:1px solid #000;
+padding:8px;
+margin-top:10px;
+line-height:1.7;
+font-size:12px;
 
 }
-
-
-
-.notes{
-
-    width:100%;
-    height:55px;
-    margin-top:5px;
-    border:1px solid #000;
-    resize:none;
-    font-family:'Cairo';
-    padding:5px;
-
-}
-
-
-
-/* ===== SIGNATURE ===== */
-
 
 .signatures{
 
-    display:grid;
-    grid-template-columns:1.2fr .7fr .7fr 1.2fr;
-    margin-top:15px;
-    border:1px solid #000;
-    text-align:center;
+display:grid;
+grid-template-columns:1.2fr .7fr .7fr 1.2fr;
+margin-top:14px;
+border:1px solid #000;
+text-align:center;
 
 }
-
-
 
 .sign-box{
 
-    border-left:1px solid #000;
+border-left:1px solid #000;
 
 }
-
-
 
 .sign-box:last-child{
 
-    border-left:none;
+border-left:none;
 
 }
-
-
 
 .sign-title{
 
-    border-bottom:1px solid #000;
-    padding:6px;
-    font-size:13px;
-    font-weight:700;
+border-bottom:1px solid #000;
+padding:6px;
+font-weight:700;
+font-size:13px;
 
 }
-
-
 
 .sign-space{
 
-    height:70px;
-    padding-top:20px;
+padding:24px 6px;
 
 }
-
-
-
-
-/* BUTTONS */
-
 
 .buttons{
 
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:15px;
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:14px;
 
 }
 
-
+.notes{
+    width:100%;
+    height:45px;
+    border:1px solid #000;
+    resize:none;
+    font-family:'Cairo',sans-serif;
+    font-size:12px;
+    padding:5px;
+}
+  
 button{
 
-    background:#0f172a;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:8px;
-    font-family:'Cairo';
-    font-weight:700;
-    cursor:pointer;
+background:#0f172a;
+color:#fff;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+font-family:'Cairo';
+font-size:14px;
+font-weight:700;
+cursor:pointer;
 
 }
-
-
 
 button:hover{
 
-    opacity:.9;
+opacity:.9;
 
 }
+.header{
+    position:relative;
+    text-align:center;
+    margin-bottom:8px;
+}
 
+.qr-box{
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+}
 
+#qrcode{
+    width:80px;
+    height:80px;
+    margin:auto;
+}
 
-/* PRINT */
-
+.qr-text{
+    font-size:10px;
+    margin-top:4px;
+    font-weight:bold;
+    line-height:1.4;
+}
 @page{
 
-    size:A4;
-    margin:8mm;
+size:A4;
+margin:8mm;
 
 }
-
-
 
 @media print{
 
-
 body{
 
-    background:white;
-    padding:0;
+background:#fff;
+padding:0;
 
 }
-
 
 .page{
 
-    width:100%;
-    min-height:auto;
-    border:none;
-    margin:0;
-    padding:0;
+width:100%;
+min-height:auto;
+border:none;
+padding:0;
+margin:0;
 
 }
-
 
 .buttons{
 
-    display:none;
+display:none;
 
 }
 
-
-
-.currency-select{
-
-    appearance:none;
-
 }
-
-
-}
-
 
 </style>
-
-
-</head>
-
-
-<body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><body>
 
 <div class="page">
 
-
-<!-- HEADER -->
-
 <div class="header">
-
-
 <div class="qr-box">
-
-<div id="qrcode"></div>
-
-<div class="qr-text">
-للتحقق من صحة العقد<br>
-امسح الرمز
+    <div id="qrcode"></div>
+    <div class="qr-text">
+        للتحقق من صحة العقد<br>
+        مرر الكاميرا إلى هنا
+    </div>
 </div>
 
+<div class="gov">
 </div>
-
-
 
 <div class="title">
 
 عقد اتفاق بيع مركبة
-
+<br>
+  <br>
 </div>
-
 
 <div class="sub" id="contractInfo">
 
@@ -395,816 +280,392 @@ body{
 
 </div>
 
-
 </div>
-
-
-
-
-
-<!-- بيانات عامة -->
-
 
 <table>
 
 <tr>
 
-<td class="label">
-اسم المالك الثلاثي
-</td>
+<td class="label">اسم المالك الثلاثي</td>
 
 <td>
-<input id="ownerName">
+<input type="text">
 </td>
 
-
-<td class="label">
-رقم المركبة
-</td>
+<td class="label">رقم المركبة</td>
 
 <td>
-<input id="plateNumber">
+<input type="text">
 </td>
 
 </tr>
 
 </table>
 
-
-
-
-
-<!-- الطرف الاول -->
-
-
 <div class="section-title">
 
-الطرف الأول (البائع)
-
+الطرف الاول ( البائع )
 </div>
-
 
 <table>
 
-
 <tr>
 
-<td class="label">
-اسم البائع
-</td>
+<td class="label">اسم البائع</td>
 
 <td>
-<input id="sellerName">
-</td>
+<input type="text" id="sellerName"></td>
 
-
-<td class="label">
-رقم الهاتف
-</td>
+<td class="label">رقم الهاتف</td>
 
 <td>
-<input>
+<input type="text">
 </td>
-
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-رقم الهوية
-</td>
+<td class="label">رقم الهوية</td>
 
 <td>
-<input>
+<input type="text">
 </td>
 
-
-<td class="label">
-العنوان
-</td>
+<td class="label">العنوان</td>
 
 <td>
-<input>
+<input type="text">
 </td>
-
 
 </tr>
-
 
 </table>
 
-
-
-
-
-<!-- الطرف الثاني -->
-
-
 <div class="section-title">
 
-الطرف الثاني (المشتري)
-
+الطرف الثاني ( المشتري )
 </div>
-
-
 
 <table>
 
-
 <tr>
 
-<td class="label">
-اسم المشتري
-</td>
+<td class="label">اسم المشتري</td>
 
 <td>
-<input id="buyerName">
+<input type="text" id="buyerName">
 </td>
 
-
-<td class="label">
-رقم الهاتف
-</td>
+<td class="label">رقم الهاتف</td>
 
 <td>
-<input>
+<input type="text">
 </td>
-
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-رقم الهوية
-</td>
+<td class="label">رقم الهوية</td>
 
 <td>
-<input>
+<input type="text">
 </td>
 
-
-<td class="label">
-العنوان
-</td>
+<td class="label">العنوان</td>
 
 <td>
-<input>
+<input type="text">
 </td>
-
 
 </tr>
-
 
 </table>
-<!-- معلومات المركبة -->
 
 <div class="section-title">
+
 معلومات المركبة
-</div>
 
+</div>
 
 <table>
 
-
 <tr>
 
-<td class="label">
-رقم الشاصي VIN
-</td>
+<td class="label">رقم الشاصي VIN</td>
 
 <td>
-<input id="vinInput">
+<input type="text" id="vinInput" oninput="fillVehicleData()">
 </td>
 
-
-<td class="label">
-نوع المركبة
-</td>
+<td class="label">اسم ونوع المركبة</td>
 
 <td>
-<input id="carType">
+<input type="text" id="carType">
 </td>
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-الموديل
-</td>
+<td class="label">الموديل</td>
 
 <td>
-<input id="carModel">
+<input type="text" id="carModel">
 </td>
 
-
-<td class="label">
-اللون
-</td>
+<td class="label">اللون</td>
 
 <td>
-<input id="carColor">
+<input type="text" id="carColor">
 </td>
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-مبلغ البيع
-</td>
-
+<td class="label">مبلغ البيع</td>
 
 <td>
-
-<div class="amount-cell">
-
-<input id="saleAmount" inputmode="numeric">
-
-<select id="currency" class="currency-select">
-
-<option value="IQD">
-د.ع
-</option>
-
-<option value="USD">
-$
-</option>
-
-</select>
-
-</div>
-
+<input type="text">
 </td>
 
-
-<td class="label">
-رقم السنوية
-</td>
-
+<td class="label">رقم السنوية</td>
 
 <td>
-<input>
+<input type="text">
 </td>
-
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-المبلغ الواصل
-</td>
-
+<td class="label">المبلغ الواصل </td>
 
 <td>
-<input id="receivedAmount" inputmode="numeric">
+<input type="text">
 </td>
 
-
-<td class="label">
-كتابة
-</td>
-
+<td class="label">كتابة</td>
 
 <td>
-<input id="receivedText" readonly>
+<input type="text">
 </td>
-
 
 </tr>
 
-
-
 <tr>
 
-<td class="label">
-الباقي
-</td>
-
+<td class="label">الباقي</td>
 
 <td>
-<input id="remainingAmount" readonly>
+<input type="text">
 </td>
 
-
-<td class="label">
-كتابة
-</td>
-
+<td class="label">كتابة</td>
 
 <td>
-<input id="remainingText" readonly>
 </td>
-
 
 </tr>
-
 
 </table>
-
-
-
-
-
-<!-- الشروط -->
-
 
 <div class="terms">
 
+1- يقر الطرف الاول (البائع) بأن المركبة أعلاه مملوكة له قانونياً وخالية من أي مشاكل قانونية أو حجوزات.<br>
 
-1- يقر الطرف الأول (البائع) بأن المركبة المذكورة أعلاه مملوكة له قانونياً وخالية من أي مشاكل قانونية أو حجوزات.<br>
+2- يقر الطرف الثاني (المشتري) بأنه قام بمعاينة المركبة وقبل شراءها بحالتها الحالية.<br>
 
-2- يقر الطرف الثاني (المشتري) بأنه عاين المركبة وقبل شراءها بحالتها الحالية.<br>
+3- تنتقل مسؤولية المركبة إلى الطرف الثاني (المشتري) بعد توقيع العقد.<br>
 
-3- تنتقل مسؤولية المركبة إلى الطرف الثاني بعد توقيع العقد.<br>
+4- يلتزم الطرفان بإكمال إجراءات نقل الملكية حسب القوانين العراقية النافذة.<br>
 
-4- يلتزم الطرفان بإكمال إجراءات نقل الملكية حسب القوانين النافذة.<br>
+5- يعتبر هذا العقد ملزماً للطرفين بعد التوقيع عليه.<br>
 
-5- يعتبر هذا العقد ملزماً للطرفين بعد التوقيع.<br>
+6- اي عقد غير مختوم يعتبر باطل.<br>
 
-6- أي عقد غير مختوم يعتبر غير معتمد.<br>
+7- لا يجوز الحك والشطب في هذا العقد.<br>
 
-7- يمنع الحك أو الشطب على العقد.<br>
+8- الطرفان متعارفان ومتفقان خارج المكتب.<br>   
 
-8- الطرفان متفقان خارج المكتب.<br>
-
-
-<br>
-
-9- الملاحظات:
-
+9- الملاحظات :<br>
 <textarea class="notes"></textarea>
 
-
 </div>
-
-
-
-
-
-
-
-<!-- التواقيع -->
-
 
 <div class="signatures">
 
-
-
 <div class="sign-box">
 
-
 <div class="sign-title">
-
-الطرف الأول (البائع)
-
+الطرف الاول ( البائع )
 </div>
 
-
 <div class="sign-space">
-
 <span id="sellerSign"></span>
-
+<br>
 </div>
-
-
 </div>
-
-
-
-
 
 <div class="sign-box">
 
-
 <div class="sign-title">
-
-الشاهد
-
+الشاهد 
 </div>
-
 
 <div class="sign-space">
-
-_____________
-
+____________
 </div>
 
-
 </div>
-
-
-
-
 
 <div class="sign-box">
 
-
 <div class="sign-title">
-
-الشاهد
-
+الشاهد 
 </div>
-
 
 <div class="sign-space">
-
-_____________
-
+____________
 </div>
 
-
 </div>
-
-
-
-
 
 <div class="sign-box">
 
-
 <div class="sign-title">
-
-الطرف الثاني (المشتري)
-
+الطرف الثاني ( المشتري )
 </div>
 
-
 <div class="sign-space">
-
 <span id="buyerSign"></span>
+<br>
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
-
-
-
-
-
 
 <div class="buttons">
 
-
 <button onclick="window.print()">
 
-طباعة / حفظ PDF
+تحميل / طباعة العقد
 
 </button>
-
-
 
 <button onclick="location.reload()">
 
-عقد جديد
+تحديث العقد
 
 </button>
 
-
 </div>
 
-
-
-
-
 </div>
-
-
-
-
-
-
 
 <script>
 
-
-/* =========================
-   قاعدة بيانات المركبات
-========================= */
-
-
 const vehicleDatabase = {
-
 
 "WBA43FJ03RCP87478":{
 
 type:"BMW X5",
 model:"2024",
-color:"أبيض"
+color:"ابيض"
 
 },
-
 
 "1HGCM82633A123456":{
 
 type:"Honda Accord",
 model:"2022",
-color:"أسود"
+color:"اسود"
 
 }
-
 
 };
 
+function fillVehicleData(){
 
+const vin =
+document.getElementById("vinInput").value.trim();
 
-document.getElementById("vinInput")
-.addEventListener("input",function(){
+const data = vehicleDatabase[vin];
 
+if(data){
 
-let vin=this.value.trim().toUpperCase();
+document.getElementById("carType").value =
+data.type;
 
+document.getElementById("carModel").value =
+data.model;
 
-let car=vehicleDatabase[vin];
-
-
-if(car){
-
-
-document.getElementById("carType").value=car.type;
-
-document.getElementById("carModel").value=car.model;
-
-document.getElementById("carColor").value=car.color;
-
+document.getElementById("carColor").value =
+data.color;
 
 }
 
+}
 
+function generateContractInfo(){
 
+const now = new Date();
+
+const year = now.getFullYear();
+
+const month =
+String(now.getMonth() + 1).padStart(2,'0');
+
+const day =
+String(now.getDate()).padStart(2,'0');
+
+const hours =
+String(now.getHours()).padStart(2,'0');
+
+const minutes =
+String(now.getMinutes()).padStart(2,'0');
+
+const contractNumber =
+`${year}${month}${day}-${hours}${minutes}`;
+
+const contractDate =
+`${day}/${month}/${year}`;
+
+document.getElementById("contractInfo").innerHTML =
+
+`رقم العقد : SH-${contractNumber}
+&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+تاريخ العقد : ${contractDate}`;
+
+document.getElementById("qrcode").innerHTML = "";
+
+const contractId = "SH-" + contractNumber;
+
+const verifyLink =
+`https://shassiha.github.io/car-rental-tracking-system/verify.html?id=${encodeURIComponent(contractId)}&date=${encodeURIComponent(contractDate)}`;
+document.getElementById("qrcode").innerHTML = "";
+
+new QRCode(document.getElementById("qrcode"), {
+    text: verifyLink,
+    width: 80,
+    height: 80
+});
+
+document.getElementById("sellerName").addEventListener("input", function(){
+    document.getElementById("sellerSign").innerText = this.value;
 });
 
 
-
-
-
-
-
-
-/* =========================
-   تنسيق الأرقام
-========================= */
-
-
-function formatMoney(input){
-
-
-let value=input.value
-.replace(/,/g,'')
-.replace(/\D/g,'');
-
-
-
-if(value===""){
-
-input.value="";
-return 0;
-
-}
-
-
-
-input.value=
-Number(value).toLocaleString('en-US');
-
-return Number(value);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   تحويل رقم إلى كتابة
-========================= */
-
-
-function numberToWords(num,currency){
-
-
-if(!num)
-return "";
-
-
-
-let ones=[
-"",
-"واحد",
-"اثنان",
-"ثلاثة",
-"أربعة",
-"خمسة",
-"ستة",
-"سبعة",
-"ثمانية",
-"تسعة"
-];
-
-
-let tens=[
-"",
-"",
-"عشرون",
-"ثلاثون",
-"أربعون",
-"خمسون",
-"ستون",
-"سبعون",
-"ثمانون",
-"تسعون"
-];
-
-
-
-let result="";
-
-
-
-if(num>=1000000){
-
-result+=Math.floor(num/1000000)+" مليون ";
-
-num%=1000000;
-
-}
-
-
-if(num>=1000){
-
-result+=Math.floor(num/1000)+" ألف ";
-
-num%=1000;
-
-}
-
-
-if(num>0){
-
-result+=num;
-
-}
-
-
-
-if(currency==="USD")
-
-return result+" دولار أمريكي فقط لا غير";
-
-
-return result+" دينار عراقي فقط لا غير";
-
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-   الحسابات
-========================= */
-
-
-function calculate(){
-
-
-let sale=
-Number(
-document.getElementById("saleAmount")
-.value.replace(/,/g,'')
-)||0;
-
-
-
-let received=
-Number(
-document.getElementById("receivedAmount")
-.value.replace(/,/g,'')
-)||0;
-
-
-
-let currency=
-document.getElementById("currency").value;
-
-
-
-let remaining=sale-received;
-
-
-
-document.getElementById("remainingAmount")
-.value=
-remaining>0?
-remaining.toLocaleString('en-US'):
-"0";
-
-
-
-document.getElementById("receivedText")
-.value=
-numberToWords(received,currency);
-
-
-
-document.getElementById("remainingText")
-.value=
-numberToWords(remaining,currency);
-
-
-
-}
-
-
-
-
-
-
-
-document.getElementById("saleAmount")
-.addEventListener("input",function(){
-
-formatMoney(this);
-
-calculate();
-
+document.getElementById("buyerName").addEventListener("input", function(){
+    document.getElementById("buyerSign").innerText = this.value;
 });
-
-
-
-
-document.getElementById("receivedAmount")
-.addEventListener("input",function(){
-
-formatMoney(this);
-
-calculate();
-
-});
-
-
-
-
-
-document.getElementById("currency")
-.addEventListener("change",calculate);
-
-
-
-
-
-
-/* =========================
-   التوقيع
-========================= */
-
-
-document.getElementById("sellerName")
-.addEventListener("input",function(){
-
-document.getElementById("sellerSign").innerText=this.value;
-
-});
-
-
-
-document.getElementById("buyerName")
-.addEventListener("input",function(){
-
-document.getElementById("buyerSign").innerText=this.value;
-
-});
-
-
+}
+generateContractInfo();
 
 </script>
-window.contractData={
-...
-};
+
+</body>
+</html>
