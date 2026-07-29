@@ -251,11 +251,8 @@ display:none;
 }
 
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><body>
 
-</head>
-
-<body>
 <div class="page">
 
 <div class="header">
@@ -651,15 +648,10 @@ const verifyLink =
 `https://shassiha.github.io/car-rental-tracking-system/verify.html?id=${encodeURIComponent(contractId)}&date=${encodeURIComponent(contractDate)}`;
 document.getElementById("qrcode").innerHTML = "";
 
-let qrElement = document.getElementById("qrcode");
-
-console.log(qrElement);
-console.log(verifyLink);
-
-new QRCode(qrElement,{
+new QRCode(document.getElementById("qrcode"), {
     text: verifyLink,
-    width:80,
-    height:80
+    width: 80,
+    height: 80
 });
 
 document.getElementById("sellerName").addEventListener("input", function(){
