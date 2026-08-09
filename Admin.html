@@ -13,278 +13,766 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
 
-font-family:'Cairo',sans-serif;
-background:#0f172a;
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
+    font-family:'Cairo',sans-serif;
+    background:#0f172a;
+    min-height:100vh;
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
 }
 
 .box{
 
-background:#fff;
-width:100%;
-max-width:380px;
-padding:30px 25px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
+    background:#fff;
+    width:100%;
+    max-width:400px;
 
+    padding:30px 25px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-h1{
+/* =========================
+   تسجيل الدخول
+========================= */
 
-text-align:center;
-font-size:22px;
-color:#0f172a;
-margin-bottom:6px;
+#loginView h1{
 
+    text-align:center;
+    font-size:22px;
+    color:#0f172a;
+
+    margin-bottom:6px;
 }
 
 .hint{
 
-text-align:center;
-font-size:12px;
-color:#777;
-margin-bottom:20px;
+    text-align:center;
+    font-size:12px;
+    color:#777;
 
+    margin-bottom:20px;
 }
 
 label{
 
-display:block;
-font-size:13px;
-font-weight:700;
-margin-bottom:4px;
-margin-top:12px;
+    display:block;
+
+    font-size:13px;
+    font-weight:700;
+
+    margin-bottom:4px;
+    margin-top:12px;
 }
 
 input{
 
-width:100%;
-padding:10px 12px;
-border:1px solid #ccc;
-border-radius:8px;
-font-family:'Cairo',sans-serif;
-font-size:14px;
-outline:none;
+    width:100%;
 
+    padding:11px 12px;
+
+    border:1px solid #ccc;
+    border-radius:8px;
+
+    font-family:'Cairo',sans-serif;
+    font-size:14px;
+
+    outline:none;
 }
 
 input:focus{
 
-border-color:#f97316;
+    border-color:#f97316;
 
+    box-shadow:0 0 0 2px rgba(249,115,22,.10);
 }
 
-button{
+.login-btn{
 
-width:100%;
-margin-top:20px;
-padding:12px;
-background:#f97316;
-color:#fff;
-border:none;
-border-radius:10px;
-font-size:15px;
-font-weight:700;
-cursor:pointer;
+    width:100%;
 
+    margin-top:20px;
+
+    padding:12px;
+
+    background:#f97316;
+    color:#fff;
+
+    border:none;
+    border-radius:10px;
+
+    font-family:'Cairo',sans-serif;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
 }
 
-button:hover{
+.login-btn:hover{
 
-opacity:.9;
-
+    opacity:.9;
 }
 
 .error{
 
-color:#dc2626;
-font-size:13px;
-text-align:center;
-margin-top:10px;
-font-weight:700;
-display:none;
+    color:#dc2626;
 
+    font-size:13px;
+
+    text-align:center;
+
+    margin-top:10px;
+
+    font-weight:700;
+
+    display:none;
 }
 
-/* لوحة بعد تسجيل الدخول */
+/* =========================
+   لوحة المكتب
+========================= */
 
 .dashboard{
 
-display:none;
-text-align:center;
-
+    display:none;
+    text-align:center;
 }
+
+/* الشعار */
+
+.office-logo{
+
+    width:85px;
+    height:85px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    margin:0 auto 12px;
+
+    display:none;
+}
+
+/* اسم المكتب */
 
 .office-name{
 
-font-size:19px;
-font-weight:800;
-color:#f97316;
-margin-bottom:4px;
+    font-size:21px;
 
+    font-weight:800;
+
+    color:#f97316;
+
+    margin-bottom:4px;
 }
+
+/* العنوان */
+
+.office-address{
+
+    font-size:13px;
+
+    color:#555;
+
+    margin-top:5px;
+}
+
+/* الهاتف */
+
+.office-phone{
+
+    font-size:13px;
+
+    color:#555;
+
+    margin-top:2px;
+
+    direction:ltr;
+}
+
+/* رسالة الترحيب */
 
 .welcome{
 
-font-size:13px;
-color:#555;
-margin-bottom:20px;
+    font-size:13px;
 
+    color:#555;
+
+    margin-top:15px;
+    margin-bottom:20px;
 }
+
+/* الأزرار */
 
 .link-btn{
 
-display:block;
-width:100%;
-padding:14px;
-margin-top:12px;
-background:#0f172a;
-color:#fff;
-border-radius:10px;
-text-decoration:none;
-font-weight:700;
-font-size:14px;
+    display:block;
 
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    transition:.2s;
 }
 
 .link-btn:hover{
 
-opacity:.9;
+    opacity:.9;
 
+    transform:translateY(-1px);
 }
+
+/* تسجيل الخروج */
 
 .logout{
 
-margin-top:18px;
-background:transparent;
-color:#dc2626;
-border:1px solid #dc2626;
-font-size:13px;
-padding:8px;
+    width:100%;
 
+    margin-top:18px;
+
+    background:transparent;
+
+    color:#dc2626;
+
+    border:1px solid #dc2626;
+
+    border-radius:10px;
+
+    font-family:'Cairo',sans-serif;
+
+    font-size:13px;
+
+    padding:9px;
+
+    cursor:pointer;
+}
+
+.logout:hover{
+
+    background:#dc2626;
+
+    color:#fff;
+}
+
+/* اسم المستخدم */
+
+.logged-user{
+
+    margin-top:12px;
+
+    font-size:11px;
+
+    color:#999;
 }
 
 </style>
 
 </head>
+
 <body>
 
 <div class="box">
 
+<!-- ==================================
+     واجهة تسجيل الدخول
+================================== -->
+
 <div id="loginView">
 
-<h1>🔐 تسجيل دخول الإدارة</h1>
-<div class="hint">خاص بأصحاب المكاتب فقط</div>
+    <h1>🔐 تسجيل دخول الإدارة</h1>
 
-<label>اسم المستخدم</label>
-<input type="text" id="username" placeholder="اسم المستخدم">
+    <div class="hint">
+        خاص بأصحاب المكاتب فقط
+    </div>
 
-<label>كلمة المرور</label>
-<input type="password" id="password" placeholder="كلمة المرور (٦ أرقام)" maxlength="6" inputmode="numeric">
+    <label for="username">
+        اسم المستخدم
+    </label>
 
-<button onclick="login()">دخول</button>
+    <input
+        type="text"
+        id="username"
+        placeholder="اكتب اسم المستخدم"
+        autocomplete="username"
+    >
 
-<div class="error" id="errorMsg">اسم المستخدم أو كلمة المرور غير صحيحة</div>
+    <label for="password">
+        كلمة المرور
+    </label>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="كلمة المرور"
+        maxlength="20"
+        autocomplete="current-password"
+    >
+
+    <button
+        class="login-btn"
+        onclick="login()"
+    >
+        دخول
+    </button>
+
+    <div
+        class="error"
+        id="errorMsg"
+    >
+        اسم المستخدم أو كلمة المرور غير صحيحة
+    </div>
 
 </div>
 
-<div id="dashboardView" class="dashboard">
 
-<div class="office-name" id="officeNameDisplay"></div>
-<div class="welcome">مرحباً، اختر نوع العقد اللي تريد تسويه</div>
+<!-- ==================================
+     لوحة المكتب بعد تسجيل الدخول
+================================== -->
 
-<a class="link-btn" href="https://shassiha.github.io/real-estate-contracts/" target="_blank">🏠 عقد بيع عقار</a>
-<a class="link-btn" href="https://shassiha.github.io/car-sale-contract.html/" target="_blank">🚗 عقد بيع سيارة</a>
+<div
+    id="dashboardView"
+    class="dashboard"
+>
 
-<button class="logout" onclick="logout()">تسجيل خروج</button>
+    <!-- شعار المكتب -->
+
+    <img
+        id="officeLogo"
+        class="office-logo"
+        src=""
+        alt="شعار المكتب"
+    >
+
+    <!-- اسم المكتب -->
+
+    <div
+        class="office-name"
+        id="officeNameDisplay"
+    ></div>
+
+    <!-- عنوان المكتب -->
+
+    <div
+        class="office-address"
+        id="officeAddressDisplay"
+    ></div>
+
+    <!-- هاتف المكتب -->
+
+    <div
+        class="office-phone"
+        id="officePhoneDisplay"
+    ></div>
+
+    <div class="welcome">
+        مرحباً بك، اختر نوع العقد اللي تريد تسويه
+    </div>
+
+
+    <!-- العقود -->
+
+    <a
+        class="link-btn"
+        href="https://shassiha.github.io/real-estate-contracts/"
+        target="_blank"
+    >
+        🏠 عقد بيع عقار
+    </a>
+
+    <a
+        class="link-btn"
+        href="https://shassiha.github.io/car-sale-contract.html/"
+        target="_blank"
+    >
+        🚗 عقد بيع سيارة
+    </a>
+
+
+    <!-- اسم المستخدم -->
+
+    <div
+        class="logged-user"
+        id="loggedUserDisplay"
+    ></div>
+
+
+    <!-- تسجيل الخروج -->
+
+    <button
+        class="logout"
+        onclick="logout()"
+    >
+        تسجيل خروج
+    </button>
 
 </div>
 
 </div>
+
 
 <script>
 
-// بيانات المكاتب - كل مكتب له يوزر وباسورد واسم يظهر بالعقود
-// لإضافة مكتب جديد: أضف سطر جديد بنفس الشكل داخل هذا الكائن
+/* =====================================================
+   بيانات المكاتب
+   =====================================================
+
+   لإضافة مكتب جديد فقط انسخ هذا الجزء:
+
+   "اسم_المستخدم": {
+
+       password: "كلمة_المرور",
+
+       officeName: "اسم المكتب",
+
+       address: "عنوان المكتب",
+
+       phone: "رقم الهاتف",
+
+       logo: "رابط اللوگو"
+
+   }
+
+   ===================================================== */
+
+
 const offices = {
 
-"مكتب القدة": {
-password: "112233",
-officeName: "مكتب القدة العقاري"
-}
+    /* =========================
+       مكتب الباشا
+    ========================= */
+
+    "albasha": {
+
+        password: "112233",
+
+        officeName: "مكتب الباشا",
+
+        address: "بغداد - المنصور",
+
+        phone: "07700000000",
+
+        logo: "https://shassiha.github.io/car-rental-tracking-system/logo.png"
+
+    },
+
+
+    /* =========================
+       مكتب القدوة
+    ========================= */
+
+    "alqidwa": {
+
+        password: "445566",
+
+        officeName: "مكتب القدوة",
+
+        address: "بغداد - الكرادة",
+
+        phone: "07800000000",
+
+        logo: "https://shassiha.github.io/car-rental-tracking-system/logo.png"
+
+    }
 
 };
 
-// إذا مسجل دخول أصلاً، اعرض اللوحة مباشرة
+
+/* =====================================================
+   عند فتح الصفحة
+===================================================== */
+
 window.onload = function(){
 
-const savedOffice = localStorage.getItem("officeName");
-const savedUser = localStorage.getItem("organizerName");
+    const savedOffice =
+        localStorage.getItem("officeData");
 
-if(savedOffice && savedUser){
-showDashboard(savedUser, savedOffice);
-}
+    if(savedOffice){
+
+        try{
+
+            const office =
+                JSON.parse(savedOffice);
+
+            if(
+                office &&
+                office.officeName
+            ){
+
+                showDashboard(office);
+
+            }
+
+        }catch(error){
+
+            console.log(
+                "خطأ في بيانات تسجيل الدخول",
+                error
+            );
+
+            localStorage.removeItem(
+                "officeData"
+            );
+
+        }
+
+    }
 
 };
+
+
+/* =====================================================
+   تسجيل الدخول
+===================================================== */
 
 function login(){
 
-const username = document.getElementById("username").value.trim();
-const password = document.getElementById("password").value.trim();
+    const username =
+        document
+        .getElementById("username")
+        .value
+        .trim()
+        .toLowerCase();
 
-const office = offices[username];
+    const password =
+        document
+        .getElementById("password")
+        .value
+        .trim();
 
-if(office && office.password === password){
 
-localStorage.setItem("organizerName", username);
-localStorage.setItem("officeName", office.officeName);
+    /* البحث عن المكتب */
 
-document.getElementById("errorMsg").style.display = "none";
+    const office =
+        offices[username];
 
-showDashboard(username, office.officeName);
 
-}else{
+    /* التحقق */
 
-document.getElementById("errorMsg").style.display = "block";
+    if(
+        office &&
+        office.password === password
+    ){
+
+        /* نسخ بيانات المكتب */
+
+        const officeData = {
+
+            username: username,
+
+            officeName: office.officeName,
+
+            address: office.address,
+
+            phone: office.phone,
+
+            logo: office.logo
+
+        };
+
+
+        /* حفظ بيانات المكتب */
+
+        localStorage.setItem(
+            "officeData",
+            JSON.stringify(officeData)
+        );
+
+
+        /* إخفاء رسالة الخطأ */
+
+        document
+        .getElementById("errorMsg")
+        .style.display = "none";
+
+
+        /* عرض لوحة المكتب */
+
+        showDashboard(officeData);
+
+
+    }else{
+
+        /* إظهار الخطأ */
+
+        document
+        .getElementById("errorMsg")
+        .style.display = "block";
+
+    }
 
 }
 
+
+/* =====================================================
+   عرض لوحة المكتب
+===================================================== */
+
+function showDashboard(office){
+
+    /* إخفاء تسجيل الدخول */
+
+    document
+    .getElementById("loginView")
+    .style.display = "none";
+
+
+    /* إظهار لوحة المكتب */
+
+    document
+    .getElementById("dashboardView")
+    .style.display = "block";
+
+
+    /* اسم المكتب */
+
+    document
+    .getElementById("officeNameDisplay")
+    .innerText =
+        office.officeName || "";
+
+
+    /* العنوان */
+
+    document
+    .getElementById("officeAddressDisplay")
+    .innerText =
+        office.address
+        ? "📍 " + office.address
+        : "";
+
+
+    /* الهاتف */
+
+    document
+    .getElementById("officePhoneDisplay")
+    .innerText =
+        office.phone
+        ? "📞 " + office.phone
+        : "";
+
+
+    /* اسم المستخدم */
+
+    document
+    .getElementById("loggedUserDisplay")
+    .innerText =
+        office.username
+        ? "المستخدم: " + office.username
+        : "";
+
+
+    /* اللوگو */
+
+    const logo =
+        document.getElementById(
+            "officeLogo"
+        );
+
+
+    if(office.logo){
+
+        logo.src = office.logo;
+
+        logo.style.display = "block";
+
+    }else{
+
+        logo.style.display = "none";
+
+    }
+
 }
 
-function showDashboard(username, officeName){
 
-document.getElementById("loginView").style.display = "none";
-document.getElementById("dashboardView").style.display = "block";
-document.getElementById("officeNameDisplay").innerText = officeName;
-
-}
+/* =====================================================
+   تسجيل الخروج
+===================================================== */
 
 function logout(){
 
-localStorage.removeItem("organizerName");
-localStorage.removeItem("officeName");
+    /* حذف بيانات الجلسة */
 
-document.getElementById("dashboardView").style.display = "none";
-document.getElementById("loginView").style.display = "block";
+    localStorage.removeItem(
+        "officeData"
+    );
 
-document.getElementById("username").value = "";
-document.getElementById("password").value = "";
+
+    /* إخفاء لوحة المكتب */
+
+    document
+    .getElementById("dashboardView")
+    .style.display = "none";
+
+
+    /* إظهار تسجيل الدخول */
+
+    document
+    .getElementById("loginView")
+    .style.display = "block";
+
+
+    /* مسح الحقول */
+
+    document
+    .getElementById("username")
+    .value = "";
+
+    document
+    .getElementById("password")
+    .value = "";
 
 }
+
+
+/* =====================================================
+   السماح بالضغط على Enter لتسجيل الدخول
+===================================================== */
+
+document
+.getElementById("password")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            login();
+
+        }
+
+    }
+);
 
 </script>
 
 </body>
+
 </html>
