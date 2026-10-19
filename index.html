@@ -532,7 +532,12 @@ appearance:none;
 <textarea class="notes"></textarea>
 <br>
 
-<b>فبناءً على حصول التراضي والايجاب والقبول حُرر هذا العقد في <span id="contractDate"></span> الساعة <span id="clauseTime"></span>.</b>
+<b>
+فبناءً على حصول التراضي والإيجاب والقبول حُرر هذا العقد في
+<span id="contractDate"></span>
+الساعة
+<span id="clauseTime"></span>.
+</b>
 <br>
 </div>
 
@@ -829,6 +834,10 @@ document.getElementById("contractInfo").innerHTML =
 `رقم العقد : SH-${contractNumber}
 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 تاريخ العقد : ${contractDate}`;
+    const clauseTime = `${hours}:${minutes}`;
+
+document.getElementById("contractDate").textContent = contractDate;
+document.getElementById("clauseTime").textContent = clauseTime;
 
 document.getElementById("qrcode").innerHTML = "";
 
